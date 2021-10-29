@@ -1,11 +1,11 @@
 import React from "react"
-import { StyleSheet, Dimensions, Button, View } from "react-native"
+import { StyleSheet, Button, View, Dimensions } from "react-native"
 
-export default () =>{
+export default ({onPressLeft, textLeft, togglePointVisible}) =>{
     return(
         <View style={styles.panel}>
-            <Button title='List' />
-            <Button title='Show/Hide' />
+            <Button onPress={onPressLeft} title={textLeft} />
+            <Button title='Show/Hide' onPress={togglePointVisible} />
         </View>
     )
 }
@@ -13,8 +13,9 @@ export default () =>{
 const styles = StyleSheet.create({
   panel: {
     flex: 1,
+    width: Dimensions.get('window').width,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
   }
 })

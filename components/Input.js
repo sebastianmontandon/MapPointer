@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { Text, View, TextInput } from "react-native";
+import React from "react";
+import { Text, View, TextInput, StyleSheet } from "react-native";
 
-export default () => {
+export default ({ title, ...rest }) => {
   return(
-    
+    <View style={styles.wrapper}>
+      <Text>{ title }</Text>
+      <TextInput {...rest} />
+    </View>
   )
 }
+const styles = StyleSheet.create({
+  wrapper: {
+    height: 40,
+  }
+});
